@@ -182,6 +182,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const hero = document.getElementById('hero');
   let ticking = false;
   if (hero) {
+    // Photo click → scroll to top
+    const photo = hero.querySelector('.hero-photo');
+    if (photo) {
+      photo.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+    // Throttled scroll shrink
     window.addEventListener('scroll', function() {
       if (!ticking) {
         requestAnimationFrame(function() {

@@ -57,18 +57,17 @@ body::before {
 }
 
 /* ─── Hero shrunk state (scroll) ─── */
-.hero.shrunk { padding: 12px 24px !important; }
-.hero.shrunk .hero-name { font-size: 18px !important; letter-spacing: 3px !important; }
-.hero.shrunk .hero-title { font-size: 13px !important; margin: 2px 0 6px !important; }
+.hero.shrunk { padding: 6px 24px !important; }
+.hero.shrunk .hero-name { font-size: 16px !important; letter-spacing: 2px !important; }
+.hero.shrunk .hero-title { display: none !important; }
 .hero.shrunk .hero-desc { display: none !important; }
 .hero.shrunk .hero-greeting { display: none !important; }
-.hero.shrunk .hero-info { font-size: 11px !important; }
-.hero.shrunk .hero-btns { margin-top: 8px !important; }
-.hero.shrunk .btn-primary,
-.hero.shrunk .btn-outline { padding: 6px 16px !important; font-size: 12px !important; }
-.hero.shrunk .hero-photo { width: 90px !important; height: 90px !important; }
-.hero.shrunk .hero-inner { gap: 20px !important; }
-.hero.shrunk .hero-text { padding: 20px !important; }
+.hero.shrunk .hero-info { display: none !important; }
+.hero.shrunk .hero-btns { display: none !important; }
+.hero.shrunk .hero-photo { width: 50px !important; height: 50px !important; border-radius: 10px !important; cursor: pointer !important; }
+.hero.shrunk .hero-photo-wrap { padding: 2px !important; }
+.hero.shrunk .hero-inner { gap: 12px !important; }
+.hero.shrunk .hero-text { padding: 8px 12px !important; display: flex !important; align-items: center !important; gap: 12px !important; }
 
 /* ═══════════ ① HERO ═══════════ */
 .hero {
