@@ -123,11 +123,9 @@ function setLang(lang) {
   localStorage.setItem('portfolio-lang', lang);
   document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
   render();
-  document.querySelectorAll('.skill-fill').forEach(b => b.style.width = '0%');
-  document.querySelectorAll('.skill-row, .skill-card, .tl-item, .section').forEach(el => el.classList.remove('visible'));
-  if (document.getElementById('sec-skills').classList.contains('visible')) {
-    setTimeout(animateSkillBars, 200);
-  }
+  document.querySelectorAll('.skill-fill').forEach(function(b) { b.style.width = '0%'; });
+  // Re-animate after re-render
+  setTimeout(function() { observeSections(); }, 100);
 }
 
 function render() {
