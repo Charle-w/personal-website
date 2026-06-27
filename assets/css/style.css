@@ -59,7 +59,7 @@ body::before {
 /* ─── Hero shrunk state (scroll) ─── */
 .hero.shrunk { padding: 6px 24px !important; }
 .hero.shrunk .hero-text { padding: 8px 12px !important; display: flex !important; align-items: center !important; justify-content: center !important; gap: 12px !important; }
-.hero.shrunk .hero-name { font-size: 16px !important; letter-spacing: 2px !important; text-align: center !important; }
+.hero.shrunk .hero-name { font-size: 16px !important; letter-spacing: 2px !important; text-align: center !important; color: #7B9ED0 !important; }
 .hero.shrunk .hero-title { display: none !important; }
 .hero.shrunk .hero-desc { display: none !important; }
 .hero.shrunk .hero-greeting { display: none !important; }
