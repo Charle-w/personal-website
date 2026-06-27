@@ -7,6 +7,7 @@ const DATA = {
     meta: { lastUpdated: '2026-06-27' },
     name: '吴闯',
     title: '质量工程师',
+    desc: '3年汽车零部件质量管理经验，精通IATF16949 体系与 VDA6.3 过程审核，擅长数据驱动质量改进。',
     greeting: '你好，我是',
     info: '<span>🚹 男 · 26岁</span><span class="hero-dot">·</span><span>📍 现居宁波</span><span class="hero-dot">·</span><span>🏠 家乡辽宁</span>',
     about: [
@@ -63,6 +64,7 @@ const DATA = {
     meta: { lastUpdated: '2026-06-27' },
     name: 'Charles Wu',
     title: 'Quality Engineer',
+    desc: 'Quality Engineer with 3 years of automotive industry experience. Proficient in IATF16949 and VDA6.3 process audits.',
     greeting: 'Hello, I am',
     info: '<span>🚹 Male · 26</span><span class="hero-dot">·</span><span>📍 Ningbo</span><span class="hero-dot">·</span><span>🏠 Liaoning</span>',
     about: [
@@ -135,6 +137,7 @@ function render() {
   setText('hero-greeting', d.greeting);
   setText('hero-name', d.name);
   setText('hero-title', d.title);
+  setText('hero-desc', d.desc);
   document.getElementById('hero-info').innerHTML = d.info;
   setText('btn-experience', d.btnExperience);
 
