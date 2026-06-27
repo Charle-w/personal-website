@@ -142,7 +142,7 @@ body::before {
 .hero-info {
   margin: 16px 0 0;
   font-size: 13px;
-  color: var(--gold);
+  color: #cbd5e1;
   display: flex;
   gap: 6px;
   flex-wrap: wrap;

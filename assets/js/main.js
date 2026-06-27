@@ -6,7 +6,7 @@ const DATA = {
   zh: {
     meta: { lastUpdated: '2026-06-27' },
     name: '吴闯',
-    title: '质量工程师 · Quality Engineer',
+    title: '质量工程师',
     greeting: '你好，我是',
     info: '<span>🚹 男 · 26岁</span><span class="hero-dot">·</span><span>📍 现居宁波</span><span class="hero-dot">·</span><span>🏠 家乡辽宁</span>',
     about: [
