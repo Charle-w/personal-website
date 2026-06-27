@@ -543,4 +543,4 @@ body::before {
 }
 
 /* ─── Hero shrunk: 毛玻璃不透明度 +20% ─── */
-.hero.shrunk .hero-text { background: rgba(255,255,255,0.34) !important; }
+.hero.shrunk .hero-text { background: rgba(255,255,255,0.51) !important; }
