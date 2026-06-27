@@ -88,7 +88,7 @@ body::before {
   gap: 48px;
   transition: gap 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.hero-text { flex: 1; background: rgba(255,255,255,0.07); border-radius: 16px; padding: 32px; border: 1px solid rgba(255,255,255,0.1); transition: padding 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.hero-text { flex: 1; background: rgba(15,30,55,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 16px; padding: 32px; border: 1px solid rgba(255,255,255,0.1); transition: padding 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
 
 .hero-greeting {
   display: block;
