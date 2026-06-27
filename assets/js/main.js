@@ -178,22 +178,29 @@ function observeSections() {
 document.addEventListener('DOMContentLoaded', () => {
   render();
   observeSections();
-  // Hero sticky shrink on scroll
+  // Hero sticky shrink (throttled)
   const hero = document.getElementById('hero');
+  let ticking = false;
   if (hero) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 80) {
-        hero.classList.add('shrunk');
-      } else {
-        hero.classList.remove('shrunk');
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          if (window.scrollY > 80) {
+            hero.classList.add('shrunk');
+          } else {
+            hero.classList.remove('shrunk');
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
-    }, { passive: true });
+    });
   }
 
   const btnExp = document.getElementById('btn-experience');
   if (btnExp) {
     btnExp.addEventListener('click', function() {
-      document.getElementById('sec-experience').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('sec-experience').scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
   }
 });
