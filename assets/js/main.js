@@ -49,17 +49,17 @@ const DATA = {
     ],
     projects: [
       { title: '🔄 5M变化点管理系统',
-        body: '基于 AGCN.AA01.046 5M变化点管理指导书开发的 Web 端变化点全生命周期管理系统。覆盖末件确认→首件确认→持续监控→关闭的完整闭环，支持5M1E分类（人机料法环测）、产线维度管理、RBAC权限矩阵及仪表盘可视化。FastAPI + Jinja2 + SQLite SSR 全栈架构。',
+        body: '<p>基于 AGCN.AA01.046 5M变化点管理指导书从零开发的 Web 端全生命周期管理系统，严格对齐 IATF 16949 第 8.5.6 条对生产和服务提供的更改控制要求。覆盖 <b>末件确认→首件确认→持续监控→关闭</b> 的完整闭环，填补了企业纸质表单管理的数字化空白。</p><p>支持 5M1E（人机料法环测）六维分类、产线维度管理及 RBAC 权限矩阵控制（管理员/质量/生产/设备等多角色），仪表盘提供变化点趋势图、状态分布饼图、5M1E 类别统计及产线维度分析。采用 FastAPI + Jinja2 + SQLite 服务端渲染架构，部署零依赖。</p>',
         tags: ['Python', 'FastAPI', 'Jinja2', 'SQLite', 'IATF16949'],
-        img: 'assets/images/project-change-point.png' },
+        imgs: ['assets/images/proj-cp-dashboard.png', 'assets/images/proj-cp-list.png', 'assets/images/proj-cp-quality.png'] },
       { title: '📋 汽车质量体系审核工具',
-        body: '面向 IATF 16949 / VDA 6.3 / VDA 6.5 三大审核标准的全功能审核管理平台。支持审核计划制定、条款检查清单、不符合项管理、纠正措施跟踪及仪表盘分析。FastAPI + Vue3 前后端分离架构，PostgreSQL 数据持久化。',
+        body: '<p>面向 IATF 16949 / VDA 6.3 / VDA 6.5 三大汽车行业审核标准的全功能审核管理平台。支持 <b>审核计划制定→条款检查清单→不符合项管理→纠正措施跟踪→审核报告生成</b> 的全流程闭环，内置三大标准的完整条款库（中英双语，IATF 16949 第4-10章全覆盖）。</p><p>仪表盘提供年度计划进度、审核发现统计（按严重程度分类）、NC 关闭率、条款覆盖度热力图等可视化分析。FastAPI 后端 + Vue3 前端分离架构，PostgreSQL 数据持久化，支持审核数据导入导出及多维度报告生成。</p>',
         tags: ['Python', 'FastAPI', 'Vue3', 'PostgreSQL', 'VDA6.3'],
-        img: 'assets/images/project-audit-tool.png' },
+        imgs: ['assets/images/project-audit-tool.png', 'assets/images/proj-audit-dashboard2.png', 'assets/images/proj-audit-clauses.png'] },
       { title: '📁 汽车质量体系文件管理系统',
-        body: '严格对齐 IATF 16949:2016 第 7.5 条「成文信息」要求的文件全生命周期管理系统。覆盖创建→审批→发布→受控→变更→作废→归档完整闭环，支持 RBAC、版本追溯、全文检索和在线预览。FastAPI + Jinja2 SSR 架构。',
+        body: '<p>严格对齐 IATF 16949:2016 第 7.5 条「成文信息」要求的企业级文件全生命周期管理系统。覆盖 <b>创建→审批→发布→受控→变更→作废→归档</b> 的完整闭环，解决企业 OneDrive 公共盘 + 纸质文件柜管理模式的合规痛点（版本管控薄弱、权限隔离不足、流程追溯缺失）。</p><p>核心功能包括：基于规则的文件自动编号（{组织代码}CN.{种类}.{部门}.{序列号}）、细粒度 RBAC 权限控制、版本历史追溯与差异对比、全文检索、在线预览（PDF/Word/Excel）、审批流程管理。FastAPI + Jinja2 SSR 架构，SQLite 数据存储。</p>',
         tags: ['Python', 'FastAPI', 'Jinja2', 'SQLite', 'IATF16949'],
-        img: 'assets/images/project-doc-mgmt.png' },
+        imgs: ['assets/images/project-doc-mgmt.png', 'assets/images/proj-doc-list.png', 'assets/images/proj-doc-upload.png'] }
     ],
     contact: { phone: '📞 132-5099-3668', email: '✉ 1923689620@qq.com' },
     btnExperience: '查看工作经历',
@@ -112,17 +112,17 @@ const DATA = {
     ],
     projects: [
       { title: '🔄 5M Change Point Management System',
-        body: 'A web-based change point lifecycle management system built on AGCN.AA01.046 5M Change Point Guideline. Covers full closed loop: Last Part Confirmation → First Piece Confirmation → Continuous Monitoring → Closure. Supports 5M1E categorization, production line management, RBAC permission matrix and dashboard visualization. FastAPI + Jinja2 + SQLite SSR.',
+        body: '<p>A web-based change point lifecycle management system built from scratch on AGCN.AA01.046 5M Change Point Guideline, aligned with IATF 16949 Clause 8.5.6 change control requirements. Covers the full closed loop: <b>Last Part Confirmation → First Piece Confirmation → Continuous Monitoring → Closure</b>, filling the digital gap left by paper-based change management.</p><p>Supports 5M1E (Man/Machine/Material/Method/Measurement/Environment) categorization, production line management, and RBAC permission matrix (Admin/Quality/Production/Equipment roles). Dashboard features trend charts, status distribution donut, 5M1E category breakdown, and per-line analytics. FastAPI + Jinja2 + SQLite SSR, zero-dependency deployment.</p>',
         tags: ['Python', 'FastAPI', 'Jinja2', 'SQLite', 'IATF16949'],
-        img: 'assets/images/project-change-point.png' },
+        imgs: ['assets/images/proj-cp-dashboard.png', 'assets/images/proj-cp-list.png', 'assets/images/proj-cp-quality.png'] },
       { title: '📋 Automotive Quality System Audit Tool',
-        body: 'A full-featured audit management platform for IATF 16949 / VDA 6.3 / VDA 6.5 standards. Supports audit planning, clause checklists, non-conformity management, corrective action tracking, and dashboard analytics. FastAPI + Vue3 separated architecture, PostgreSQL persistence.',
+        body: '<p>A full-featured audit management platform for IATF 16949 / VDA 6.3 / VDA 6.5 automotive quality standards. Supports the complete workflow: <b>Audit Planning → Clause Checklists → Non-Conformity Management → Corrective Action Tracking → Report Generation</b>. Built-in bilingual clause library covering IATF 16949 Chapters 4-10.</p><p>Dashboard provides annual plan progress, audit findings by severity, NC closure rate, and clause coverage heatmap for visual analytics. FastAPI backend + Vue3 frontend with PostgreSQL persistence, supporting data import/export and multi-dimensional reporting.</p>',
         tags: ['Python', 'FastAPI', 'Vue3', 'PostgreSQL', 'VDA6.3'],
-        img: 'assets/images/project-audit-tool.png' },
+        imgs: ['assets/images/project-audit-tool.png', 'assets/images/proj-audit-dashboard2.png', 'assets/images/proj-audit-clauses.png'] },
       { title: '📁 Automotive QMS Document Management System',
-        body: 'A web-based document lifecycle management system aligned with IATF 16949:2016 Clause 7.5 "Documented Information". Covers Create → Approve → Publish → Control → Revise → Obsolete → Archive full lifecycle, with RBAC, version history & diff, full-text search and online preview. FastAPI + Jinja2 SSR.',
+        body: '<p>An enterprise document lifecycle management system strictly aligned with IATF 16949:2016 Clause 7.5 "Documented Information". Covers the complete <b>Create → Approve → Publish → Control → Revise → Obsolete → Archive</b> lifecycle, addressing compliance gaps from shared-drive + paper-based document control (weak versioning, insufficient access control, missing audit trails).</p><p>Key features: rule-based auto-numbering ({OrgCode}CN.{Type}.{Dept}.{Sequence}), granular RBAC access control, version history with diff comparison, full-text search, online preview (PDF/Word/Excel), and approval workflow management. FastAPI + Jinja2 SSR architecture, SQLite storage.</p>',
         tags: ['Python', 'FastAPI', 'Jinja2', 'SQLite', 'IATF16949'],
-        img: 'assets/images/project-doc-mgmt.png' },
+        imgs: ['assets/images/project-doc-mgmt.png', 'assets/images/proj-doc-list.png', 'assets/images/proj-doc-upload.png'] }
     ],
     contact: { phone: '📞 +86 132-5099-3668', email: '✉ 1923689620@qq.com' },
     btnExperience: 'View Experience',
@@ -179,8 +179,13 @@ function render() {
   // Projects
   var proj = document.getElementById('projects-list');
   if (proj) proj.innerHTML = d.projects.map(function(p) {
-    var imgHtml = p.img ? '<img class="proj-img" src="' + p.img + '" alt="' + p.title + '" loading="lazy">' : '';
-    return '<div class="proj-card">' + imgHtml + '<div class="proj-title">' + p.title + '</div><div class="proj-body">' + p.body + '</div><div class="proj-tags">' + p.tags.map(function(t) { return '<span class="proj-tag">' + t + '</span>'; }).join('') + '</div></div>';
+    var galleryHtml = '';
+    if (p.imgs && p.imgs.length) {
+      galleryHtml = '<div class="proj-gallery">' + p.imgs.map(function(img) {
+        return '<img src="' + img + '" alt="' + p.title + '" loading="lazy" onclick="openLightbox(\'' + img + '\')">';
+      }).join('') + '</div>';
+    }
+    return '<div class="proj-card">' + galleryHtml + '<div class="proj-title">' + p.title + '</div><div class="proj-body">' + p.body + '</div><div class="proj-tags">' + p.tags.map(function(t) { return '<span class="proj-tag">' + t + '</span>'; }).join('') + '</div></div>';
   }).join('');
 
   // Contact & Footer
@@ -312,3 +317,19 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('sec-experience').scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 });
+
+/* ─── Lightbox (点击项目截图放大查看) ─── */
+function openLightbox(src) {
+  var lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.innerHTML = '<span class="lightbox-close">&times;</span><img src="' + src + '">';
+  lb.addEventListener('click', function(e) {
+    if (e.target === lb || e.target.className === 'lightbox-close') {
+      lb.remove();
+    }
+  });
+  document.addEventListener('keydown', function esc(e) {
+    if (e.key === 'Escape') { lb.remove(); document.removeEventListener('keydown', esc); }
+  });
+  document.body.appendChild(lb);
+}
