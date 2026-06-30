@@ -31,6 +31,158 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ═══════════════════════════════════════════════
+   WELCOME · Landing Overlay 欢迎页
+   配色/字体/圆角与主站严格一致
+   ═══════════════════════════════════════════════ */
+/* Prevent body scroll while landing is visible */
+body.landing-active { overflow: hidden; }
+
+.landing {
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  /* exit animation: controlled by JS adding .landing-exit */
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.landing-exit {
+  opacity: 0; visibility: hidden; pointer-events: none;
+}
+
+/* Background — same gradient as body::before */
+.landing-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, #072059 0%, #000000 100%);
+  z-index: -1;
+}
+/* Subtle noise texture overlay for depth */
+.landing-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Centered card — glassmorphism matching hero-text */
+.landing-card {
+  position: relative;
+  text-align: center;
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  padding: 48px 40px 44px;
+  max-width: 480px; width: 90%;
+  /* entrance animation */
+  animation: landingCardIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  /* exit scale — triggered via JS class */
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity   0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.landing-exit .landing-card {
+  transform: scale(0.92) translateY(12px);
+  opacity: 0;
+}
+
+@keyframes landingCardIn {
+  from { opacity: 0; transform: scale(0.94) translateY(18px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0); }
+}
+
+/* Tag badge — blue pill matching lang-btn.active */
+.landing-tag {
+  display: inline-block;
+  background: #0639B5;
+  color: #fff;
+  font-size: 12px; font-weight: 600;
+  padding: 5px 16px; border-radius: 20px;
+  letter-spacing: 0.5px;
+  font-family: Inter, 'Noto Sans SC', sans-serif;
+  margin-bottom: 28px;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+/* Name — large, matching hero-name color */
+.landing-name {
+  font-size: 40px; font-weight: 700;
+  color: var(--espresso);
+  letter-spacing: 8px;
+  margin: 0 0 8px;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+}
+
+/* Title */
+.landing-title {
+  font-size: 16px; font-weight: 500;
+  color: var(--muted);
+  margin: 0 0 6px;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+/* Description */
+.landing-desc {
+  font-size: 13px;
+  color: var(--ink);
+  margin: 0 0 32px;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+}
+
+/* Enter button — blue accent, rounded, matching contact-link */
+.landing-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #0639B5;
+  color: #fff;
+  border: none; border-radius: 50px;
+  padding: 14px 36px;
+  font-size: 16px; font-weight: 600;
+  cursor: pointer;
+  font-family: Inter, 'Noto Sans SC', sans-serif;
+  letter-spacing: 1px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+  outline: none;
+}
+.landing-btn:hover {
+  background: #074FD9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(7, 79, 217, 0.35);
+}
+.landing-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(7, 79, 217, 0.25);
+}
+.landing-btn-arrow {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.landing-btn:hover .landing-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Fade-up keyframe (reuse existing behavior) */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .landing-card { padding: 36px 24px 32px; }
+  .landing-name { font-size: 32px; letter-spacing: 5px; }
+  .landing-title { font-size: 14px; }
+  .landing-btn { padding: 12px 28px; font-size: 15px; }
+}
+
+/* Reduced motion — skip animations */
+@media (prefers-reduced-motion: reduce) {
+  .landing-card,
+  .landing-tag, .landing-name, .landing-title,
+  .landing-desc, .landing-btn { animation: none; }
+  .landing { transition: opacity 0.1s; }
+}
+
 body {
   font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
   background: #000;

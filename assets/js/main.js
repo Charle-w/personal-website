@@ -232,6 +232,55 @@ function observeSections() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+
+  /* ═══════════════════════════════════════════════
+     WELCOME · Landing Overlay 欢迎页
+     点击「进入网站」→ 卡片缩放淡出 → 主页显示
+     同会话内通过 sessionStorage 记忆，刷新不重复
+     ═══════════════════════════════════════════════ */
+  (function initLanding() {
+    var landing  = document.getElementById('landing');
+    var btn      = document.getElementById('landing-enter');
+    if (!landing || !btn) return;
+
+    // 同会话内已进入过 → 直接跳过欢迎页
+    if (sessionStorage.getItem('landing-done')) {
+      landing.style.display = 'none';
+      return;
+    }
+
+    // Lock body scroll while landing is up
+    document.body.classList.add('landing-active');
+
+    function dismiss() {
+      // 标记已访问（刷新不重复）
+      sessionStorage.setItem('landing-done', '1');
+
+      // 触发退出动画
+      landing.classList.add('landing-exit');
+
+      // 解锁页面滚动
+      document.body.classList.remove('landing-active');
+
+      // 动画结束后移除 DOM，释放内存
+      landing.addEventListener('transitionend', function handler() {
+        landing.removeEventListener('transitionend', handler);
+        landing.style.display = 'none';
+      });
+    }
+
+    // 点击「进入网站」按钮
+    btn.addEventListener('click', dismiss);
+
+    // 可选：按 Enter / Space 键也可以进入
+    document.addEventListener('keydown', function keyNav(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        document.removeEventListener('keydown', keyNav);
+        dismiss();
+      }
+    });
+  })();
   render();
   observeSections();
 
