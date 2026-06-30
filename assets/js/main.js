@@ -4,7 +4,7 @@
 
 const DATA = {
   zh: {
-    meta: { lastUpdated: '2026-06-27' },
+    meta: { lastUpdated: '2026-06-30' },
     name: '吴闯',
     title: '质量工程师',
     desc: '3年汽车零部件质量管理经验，精通IATF16949 体系与 VDA6.3 过程审核，擅长数据驱动质量改进。',
@@ -48,6 +48,17 @@ const DATA = {
         ] }
     ],
     projects: [
+      { title: '🔄 5M变化点管理系统',
+        body: '基于 AGCN.AA01.046 5M变化点管理指导书开发的 Web 端变化点全生命周期管理系统。覆盖末件确认→首件确认→持续监控→关闭的完整闭环，支持5M1E分类（人机料法环测）、产线维度管理、RBAC权限矩阵及仪表盘可视化。FastAPI + Jinja2 + SQLite SSR 全栈架构。',
+        tags: ['Python', 'FastAPI', 'Jinja2', 'SQLite', 'IATF16949'],
+        img: 'assets/images/project-change-point.png' },
+      { title: '📋 汽车质量体系审核工具',
+        body: '面向 IATF 16949 / VDA 6.3 / VDA 6.5 三大审核标准的全功能审核管理平台。支持审核计划制定、条款检查清单、不符合项管理、纠正措施跟踪及仪表盘分析。FastAPI + Vue3 前后端分离架构，PostgreSQL 数据持久化。',
+        tags: ['Python', 'FastAPI', 'Vue3', 'PostgreSQL', 'VDA6.3'] },
+      { title: '📁 汽车质量体系文件管理系统',
+        body: '严格对齐 IATF 16949:2016 第 7.5 条「成文信息」要求的文件全生命周期管理系统。覆盖创建→审批→发布→受控→变更→作废→归档完整闭环，支持 RBAC、版本追溯、全文检索和在线预览。FastAPI + Jinja2 SSR 架构。',
+        tags: ['Python', 'FastAPI', 'Jinja2', 'SQLite', 'IATF16949'],
+        img: 'assets/images/project-doc-mgmt.png' },
       { title: '🎵 MusicDecrypt — 加密音乐文件解密工具',
         body: '利用 AI 智能体从零到一独立完成的全栈软件项目。Python + FastAPI 构建后端，支持 NCM、MFLAC、MGG、QMC 等多种主流加密格式解密为 MP3/FLAC。配备 Web 交互界面，使用 PyInstaller 打包为独立可执行文件（零依赖运行）。',
         tags: ['Python', 'FastAPI', 'PyInstaller'] },
@@ -57,11 +68,11 @@ const DATA = {
     ],
     contact: { phone: '📞 132-5099-3668', email: '✉ 1923689620@qq.com' },
     btnExperience: '查看工作经历',
-    footer: '© 2026 吴闯 · 最后更新 2026-06-27'
+    footer: '© 2026 吴闯 · 最后更新 2026-06-30'
   },
 
   en: {
-    meta: { lastUpdated: '2026-06-27' },
+    meta: { lastUpdated: '2026-06-30' },
     name: 'Charles Wu',
     title: 'Quality Engineer',
     desc: 'Quality Engineer with 3 years of automotive industry experience. Proficient in IATF16949 and VDA6.3 process audits.',
@@ -105,6 +116,17 @@ const DATA = {
         ] }
     ],
     projects: [
+      { title: '🔄 5M Change Point Management System',
+        body: 'A web-based change point lifecycle management system built on AGCN.AA01.046 5M Change Point Guideline. Covers full closed loop: Last Part Confirmation → First Piece Confirmation → Continuous Monitoring → Closure. Supports 5M1E categorization, production line management, RBAC permission matrix and dashboard visualization. FastAPI + Jinja2 + SQLite SSR.',
+        tags: ['Python', 'FastAPI', 'Jinja2', 'SQLite', 'IATF16949'],
+        img: 'assets/images/project-change-point.png' },
+      { title: '📋 Automotive Quality System Audit Tool',
+        body: 'A full-featured audit management platform for IATF 16949 / VDA 6.3 / VDA 6.5 standards. Supports audit planning, clause checklists, non-conformity management, corrective action tracking, and dashboard analytics. FastAPI + Vue3 separated architecture, PostgreSQL persistence.',
+        tags: ['Python', 'FastAPI', 'Vue3', 'PostgreSQL', 'VDA6.3'] },
+      { title: '📁 Automotive QMS Document Management System',
+        body: 'A web-based document lifecycle management system aligned with IATF 16949:2016 Clause 7.5 "Documented Information". Covers Create → Approve → Publish → Control → Revise → Obsolete → Archive full lifecycle, with RBAC, version history & diff, full-text search and online preview. FastAPI + Jinja2 SSR.',
+        tags: ['Python', 'FastAPI', 'Jinja2', 'SQLite', 'IATF16949'],
+        img: 'assets/images/project-doc-mgmt.png' },
       { title: '🎵 MusicDecrypt — Encrypted Music Decryption Tool',
         body: 'Full-stack software project built independently using AI agents. Python + FastAPI backend supporting NCM, MFLAC, MGG, QMC decryption to MP3/FLAC. Web UI included, packaged as standalone executable (zero dependencies) with PyInstaller.',
         tags: ['Python', 'FastAPI', 'PyInstaller'] },
@@ -114,7 +136,7 @@ const DATA = {
     ],
     contact: { phone: '📞 +86 132-5099-3668', email: '✉ 1923689620@qq.com' },
     btnExperience: 'View Experience',
-    footer: '© 2026 Charles Wu · Last updated 2026-06-27'
+    footer: '© 2026 Charles Wu · Last updated 2026-06-30'
   }
 };
 
@@ -167,7 +189,8 @@ function render() {
   // Projects
   var proj = document.getElementById('projects-list');
   if (proj) proj.innerHTML = d.projects.map(function(p) {
-    return '<div class="proj-card"><div class="proj-title">' + p.title + '</div><div class="proj-body">' + p.body + '</div><div class="proj-tags">' + p.tags.map(function(t) { return '<span class="proj-tag">' + t + '</span>'; }).join('') + '</div></div>';
+    var imgHtml = p.img ? '<img class="proj-img" src="' + p.img + '" alt="' + p.title + '" loading="lazy">' : '';
+    return '<div class="proj-card">' + imgHtml + '<div class="proj-title">' + p.title + '</div><div class="proj-body">' + p.body + '</div><div class="proj-tags">' + p.tags.map(function(t) { return '<span class="proj-tag">' + t + '</span>'; }).join('') + '</div></div>';
   }).join('');
 
   // Contact & Footer

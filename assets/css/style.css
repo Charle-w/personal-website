@@ -419,6 +419,16 @@ body::before {
   border-left: 3px solid var(--indigo);
 }
 
+.proj-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: transform 0.3s var(--ease);
+}
+.proj-card:hover .proj-img {
+  transform: scale(1.02);
+}
 .proj-title {
   font-size: 15px;
   font-weight: 700;
